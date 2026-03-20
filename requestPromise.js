@@ -24,47 +24,67 @@ const requestPromise = (url) => {
 };
 
 requestPromise("movie.com")
-  .then((response) => {
-    console.log("Success", response);
-    requestPromise("movie.com")
-      .then((response) => {
-        console.log("Success", response);
-        requestPromise("movie.com")
-          .then((response) => {
-            console.log("Success", response);
-            requestPromise("movie.com")
-              .then((response) => {
-                console.log("Success", response);
-                requestPromise("movie.com")
-                  .then((response) => {
-                    console.log("Success", response);
-                    requestPromise("movie.com")
-                      .then((response) => {
-                        console.log("Success", response);
-                      })
-                      .catch((error) => {
-                        console.log("Error", error);
-                      });
-                  })
-                  .catch((error) => {
-                    console.log("Error", error);
-                  });
-              })
-              .catch((error) => {
-                console.log("Error", error);
-              });
-          })
-          .catch((error) => {
-            console.log("Error", error);
-          });
-      })
-      .catch((error) => {
-        console.log("Error", error);
-      });
+  .then((result) => {
+    console.log('page 1');
+    console.log(result);
+    return requestPromise('movie.com');
+  })
+  .then((result) => {
+    console.log('page 2');
+    console.log(result);
+    return requestPromise('movie.com');
+  })
+  .then((result) => {
+    console.log('page 3');
+    console.log(result);
+    return requestPromise('movie.com');
   })
   .catch((error) => {
-    console.log("Error", error);
+    console.log(error);
   });
+
+// requestPromise("movie.com")
+//   .then((response) => {
+//     console.log("Success", response);
+//     requestPromise("movie.com")
+//       .then((response) => {
+//         console.log("Success", response);
+//         requestPromise("movie.com")
+//           .then((response) => {
+//             console.log("Success", response);
+//             requestPromise("movie.com")
+//               .then((response) => {
+//                 console.log("Success", response);
+//                 requestPromise("movie.com")
+//                   .then((response) => {
+//                     console.log("Success", response);
+//                     requestPromise("movie.com")
+//                       .then((response) => {
+//                         console.log("Success", response);
+//                       })
+//                       .catch((error) => {
+//                         console.log("Error", error);
+//                       });
+//                   })
+//                   .catch((error) => {
+//                     console.log("Error", error);
+//                   });
+//               })
+//               .catch((error) => {
+//                 console.log("Error", error);
+//               });
+//           })
+//           .catch((error) => {
+//             console.log("Error", error);
+//           });
+//       })
+//       .catch((error) => {
+//         console.log("Error", error);
+//       });
+//   })
+//   .catch((error) => {
+//     console.log("Error", error);
+//   });
 
 async function requestHandler() {
   try {

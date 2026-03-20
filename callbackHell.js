@@ -1,4 +1,3 @@
-
 setTimeout(function () {
   document.body.style.backgroundColor = "red";
   setTimeout(function () {
@@ -8,7 +7,7 @@ setTimeout(function () {
       setTimeout(function () {
         document.body.style.backgroundColor = "black";
         setTimeout(function () {
-          document.getElementById('footer').style.backgroundColor = "blue";
+          document.getElementById("footer").style.backgroundColor = "blue";
         }, 1000);
       }, 1000);
     }, 1000);
